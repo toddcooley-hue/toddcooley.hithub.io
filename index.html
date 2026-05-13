@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todd Cooley | Enrollment Strategy & Data Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f6f5f2;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #2f6f68;
+      --accent-light: #d8ebe8;
+      --max-width: 1100px;
+      --radius: 18px;
+      --shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 2rem 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 5rem 0 4rem;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text p {
+      color: var(--muted);
+      max-width: 60ch;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #eef3f2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .pill {
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-heading {
+      margin-bottom: 2rem;
+    }
+
+    .section-heading h2 {
+      font-size: 2rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 65ch;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .project-meta span {
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    footer {
+      padding: 3rem 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Todd Cooley</div>
+
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#writing">Writing</a>
+          <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text container-left">
+        <h1>
+          Enrollment strategy, data storytelling, and digital craft.
+        </h1>
+
+        <p>
+          I build systems and experiences that help mission-driven institutions understand their data, communicate clearly, and grow sustainably. My work sits at the intersection of analytics, design, higher education, and thoughtful technology.
+        </p>
+
+        <div class="button-group">
+          <a class="button primary" href="#projects">View Projects</a>
+          <a class="button" href="mailto:your@email.com">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Current Focus</h3>
+
+        <div class="stack">
+          <div class="pill">Enrollment Analytics</div>
+          <div class="pill">Quarto Reporting</div>
+          <div class="pill">Shiny Dashboards</div>
+          <div class="pill">Data Visualization</div>
+          <div class="pill">Graduate Marketing</div>
+          <div class="pill">GitHub Portfolio</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>Selected Projects</h2>
+          <p>
+            A growing collection of analytics, reporting, automation, and communication work.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <h3>Quarterly Enrollment Dashboard</h3>
+            <p>
+              A reproducible reporting workflow built with Quarto and R to track application, deposit, and enrollment trends across graduate programs.
+            </p>
+
+            <div class="project-meta">
+              <span>R</span>
+              <span>Quarto</span>
+              <span>Enrollment Data</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>YOY Funnel Tracking in Looker Studio</h3>
+            <p>
+              Developed dynamic year-over-year comparison tables with rolling date cutoffs and custom calculated fields.
+            </p>
+
+            <div class="project-meta">
+              <span>Looker Studio</span>
+              <span>SQL Logic</span>
+              <span>Visualization</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Graduate Program Marketing System</h3>
+            <p>
+              Built messaging frameworks and automated campaign structures to support inquiry generation and applicant conversion.
+            </p>
+
+            <div class="project-meta">
+              <span>CRM Strategy</span>
+              <span>Email Campaigns</span>
+              <span>Communications</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Music Discovery & Recommendation Tracker</h3>
+            <p>
+              A personal project exploring social music discovery using scrobble data, recommendation logic, and listening history.
+            </p>
+
+            <div class="project-meta">
+              <span>API Work</span>
+              <span>Data Exploration</span>
+              <span>Personal Project</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>About</h2>
+          <p>
+            A short introduction that frames both your professional direction and your philosophy toward work.
+          </p>
+        </div>
+
+        <div class="about">
+
+          <div class="about-card">
+            <h3 style="margin-bottom:1rem;">Professional Direction</h3>
+
+            <p>
+              I currently work in graduate and continuing education admissions, where I focus on enrollment strategy, reporting systems, communication workflows, and program growth. Increasingly, I’m interested in creating elegant, transparent systems that help institutions make better decisions.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h3 style="margin-bottom:1rem;">Design Ethos</h3>
+
+            <p>
+              I’m drawn to work that feels calm, useful, and enduring. My influences range from Scandinavian and Japanese design traditions to ambient music culture, ecological thinking, and digital minimalism.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="writing">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>Writing & Notes</h2>
+          <p>
+            Essays, observations, and process notes on higher education, technology, creativity, and everyday life.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <h3>Todd at Home</h3>
+            <p>
+              Reflections on fatherhood, routine, and building a meaningful domestic life.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Scene Theory</h3>
+            <p>
+              Notes on music communities, geography, internet culture, and the persistence of local identity.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Digital Garden</h3>
+            <p>
+              An evolving collection of notes, references, experiments, and unfinished ideas.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        Built with GitHub Pages · Designed for clarity, craft, and iteration.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
